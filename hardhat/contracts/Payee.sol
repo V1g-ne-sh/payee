@@ -58,7 +58,7 @@ contract Payee {
     function register(bytes32 _username, bytes32 _dataHash) public payable {
         //fees per registration= 10000 ROSE 
         require(msg.value >= 10000*1e18, 'need to pay 1 ROSE to register');
-        fees+=1e18;
+        fees+=10000*1e18;
         require(userNameDetail[_username].userAddress == address(0),'Already registered username');
         userNameDetail[_username]= userData({
                                         userAddress:msg.sender, 
@@ -79,9 +79,9 @@ contract Payee {
     
     function withdrawMoney(uint256 _amount) public {
         //Withdrawl fees per transaction= 10000 ROSE
-        require(userBalance[userName[msg.sender]]> _amount+(10000* 1e18)); 
-        userBalance[userName[msg.sender]]-=_amount+(10000* 1e18);
-        fees+=(10000* 1e18);
+        require(userBalance[userName[msg.sender]]> _amount+(10000*1e18)); 
+        userBalance[userName[msg.sender]]-=_amount+(10000*1e18);
+        fees+=(10000*1e18);
         (bool sent, bytes memory data) = msg.sender.call{value: _amount}("");
         
         require(sent, "Failed to send Ether");

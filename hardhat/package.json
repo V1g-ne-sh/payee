@@ -2,7 +2,6 @@
   "name": "hardhat-project",
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^2.0.0",
-    "@oasisprotocol/sapphire-hardhat": "^2.16.1",
     "hardhat": "^2.12.7"
   },
   "dependencies": {
