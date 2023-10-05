@@ -6,6 +6,7 @@ var chainId=1029;
 var payeeAddress = "0xFA97Fbfd62dE543BeCfa31Ad704F500d6826bbFA";
 var userName="";
 var bal;
+	var BN=web3.utils.BN;
 payeeABI=[
 	{
 		"inputs": [
@@ -296,6 +297,7 @@ async function pay(){
   }
 
 async function register(){
+	var BN=web3.utils.BN;
     var val=document.getElementById('uname').value
     var Contract=new web3.eth.Contract(payeeABI,payeeAddress);
     response = await Contract.methods.getUserDetails(web3.utils.fromAscii(val)).call(   )
