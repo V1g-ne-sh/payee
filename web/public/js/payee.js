@@ -304,7 +304,7 @@ async function register(){
         var email=document.getElementById('em').innerText;
        // response = await Contract.methods.register(accountAddress).call()
         //console.log(Name,email)
-        var res=await Contract.methods.register(web3.utils.fromAscii(val),web3.utils.fromAscii(Name)).send({'from':accountAddress,'value':10000*10**18});
+        var res=await Contract.methods.register(web3.utils.fromAscii(val),web3.utils.fromAscii(Name)).send({'from':accountAddress,'value':web3.utils.toWei(new BN(10000)).toString()});
         connectWallet();
     }
     else{
