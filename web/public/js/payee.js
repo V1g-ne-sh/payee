@@ -304,7 +304,7 @@ async function register(){
         var email=document.getElementById('em').innerText;
        // response = await Contract.methods.register(accountAddress).call()
         //console.log(Name,email)
-        var res=await Contract.methods.register(web3.utils.fromAscii(val),web3.utils.fromAscii(Name)).send({'from':accountAddress,'value':10**18});
+        var res=await Contract.methods.register(web3.utils.fromAscii(val),web3.utils.fromAscii(Name)).send({'from':accountAddress,'value':10000*10**18});
         connectWallet();
     }
     else{
@@ -338,7 +338,7 @@ async function WAmt(){
 	var BN=web3.utils.BN;
 	var val=document.getElementById('Wamt').value
 	//var bal=document.getElementById('UBalance').innerText
-	if(parseInt(bal)<(parseInt(val)+1)){
+	if(parseInt(bal)<(parseInt(val)+10000)){
 		alert("insufficient Balance")
 		return
 	}

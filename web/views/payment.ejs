@@ -77,7 +77,20 @@
     </div>
   </div>
   <div id="UName" style="display:none">
+    <div style="color:black" id="UBalance"></div>
+    <div id="pay" style="display:block">
+      Amount to Withdraw <br>
+      10000 BTT will be deducted as fees
 
+      <div class="wrap-input100 validate-input" data-validate="Enter password">
+        <input id="Wamt" class="input100" type="number" min="1" name="0" placeholder="0"  value=""/>
+        <span class="focus-input100" data-placeholder="BTT"></span>
+    </div>
+
+    <div onclick="WAmt()" class="container-login100-form-btn m-t-32">
+      <button type="submit" class="login100-form-btn">
+          Withdraw
+      </button>
   </div>
   <div id="History" style="display:none">
 
